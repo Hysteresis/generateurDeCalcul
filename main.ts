@@ -1,0 +1,68 @@
+// variable necessaire pour le calcul
+// 2 variables qui donne un nombre aleatoire compris entre 0 et 100
+
+let nombre1 = Math.floor(Math.random()*100)+1
+let nombre2 = Math.floor(Math.random()*100)+1
+
+
+// tableau qui stocke + / * -
+const OPERATEURS: string[] = ['+', '-', '*' ,'/'];
+
+//récupérer aleatoirment un seul symbole du tableau
+let symbole = OPERATEURS[Math.floor(Math.random()*OPERATEURS.length)] 
+
+// recuperer des elements du DOM (document)
+let formule:any  = document.getElementById('formule');
+
+// afiicher sur la page le calcul
+formule.innerHTML = nombre1 +" "+ symbole +" "+ nombre2 +" = ";
+
+//faire le calcul et le stocker le resultat
+let resultat: number = 0;
+if (symbole === '+'){
+    resultat = nombre1 + nombre2;
+}
+if (symbole === '-') {
+    resultat = nombre1 - nombre2;
+}
+if (symbole === '/') {
+    resultat = nombre1 / nombre2;
+}
+if (symbole === '*') {
+    resultat = nombre1 * nombre2;
+}
+
+ console.log(resultat.toFixed(1));
+
+ // les fonctions
+
+//  retry
+function recommencer() : void{
+    location.reload();
+}
+
+function tentative(){
+    // recuperer la saisie
+  let reponseUtilisateur  = (<HTMLInputElement>document.getElementById('reponseUtilisateur'))!.value;  
+    // console.log(reponseUtilisateur);
+    // comparer la saisie utilisateur avec le resultat attendu
+    let textIndication="";
+
+    if(parseInt(reponseUtilisateur) == resultat){
+        textIndication="GG!!"
+    } else if(parseInt(reponseUtilisateur)< resultat) {
+       textIndication="trop petit eh non !!!!!!!!!!!!";
+    } else if(parseInt(reponseUtilisateur)> resultat) {
+        textIndication="trop grand meuh non !!!!!!!!!!!!";
+    } else {
+        textIndication="mauvaise saisie"
+    }
+    let indication: any = document.getElementById('indication')
+    indication.innerHTML = textIndication
+    
+}
+
+
+
+// afficher
+

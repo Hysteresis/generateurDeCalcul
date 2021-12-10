@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,28 @@
     <!-- stylesheet CSS -->
     <link rel="stylesheet" href="style.css">
     <title>CalculFacile</title>
+    <!-- script JS : Defer execute JS une fois la page lue -->
+    <script defer src="main.js"></script>
 </head>
+
 <body>
     <header> 
         <h1>Generateur de calculs</h1>
-        <h2>Indiquer le résultat du calcul avec une précision au Dixième près (1 chiffre après la ',')</h2>
+        <h2>Indiquer le résultat du calcul avec une précision au Dixième près (1 chiffre après la <span>' , '</span> )</h2>
     </header>
 
     <main>       
-        <p></p><!-- afficher le calcul -->
-        <input type="number">      
-        <p></p>  <!-- indication -->
-        <button>Soumettre</button>
-        <button>Recommencer</button>
+        <p id="formule"></p><!-- afficher le calcul -->
+        <input type="number" id="reponseUtilisateur">      
+        <p  id="indication"></p>  <!-- indication -->
+        <button onclick="tentative()">Soumettre</button>
+        <button onclick="recommencer()" class="retry">Recommencer</button>
     </main>
 
     <footer>
         <p>test avec type script</p>
     </footer>
 
-
-
-
 </body>
+
 </html>

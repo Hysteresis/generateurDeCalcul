@@ -1,5 +1,36 @@
 *{
     margin: 0;
     padding: 0;
+
+}
+
+body{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    background-color: burlywood;
+    height: 200px;
+}
+
+h1{
+    font-size: 2rem;
+    color:blue;
     
+}
+
+button{
+height: 50px;
+background-color: red;
+margin: 2em;
+padding: 1em;
+}
+
+
+.retry{
+    background-color: blueviolet; 
+}
+
+h2 span{
+    color:red;
 }
