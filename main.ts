@@ -48,11 +48,12 @@ function tentative(){
     // comparer la saisie utilisateur avec le resultat attendu
     let textIndication="";
 
-    if(parseInt(reponseUtilisateur) == resultat){
+    if((reponseUtilisateur) == resultat.toFixed(1)){
         textIndication="GG!!"
-    } else if(parseInt(reponseUtilisateur)< resultat) {
+        window.setTimeout("recommencer()", 1500)
+    } else if((reponseUtilisateur)< resultat.toFixed(1)) {
        textIndication="trop petit eh non !!!!!!!!!!!!";
-    } else if(parseInt(reponseUtilisateur)> resultat) {
+    } else if((reponseUtilisateur)> resultat.toFixed(1)) {
         textIndication="trop grand meuh non !!!!!!!!!!!!";
     } else {
         textIndication="mauvaise saisie"
